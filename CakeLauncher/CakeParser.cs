@@ -5,10 +5,6 @@ using System.Linq;
 
 namespace CakeLauncher
 {
-    public class CakeTask
-    {
-        public string Name { set; get; }
-    }
 
     public class CakeParser
     {

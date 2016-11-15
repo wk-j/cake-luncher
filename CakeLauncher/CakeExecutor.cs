@@ -11,10 +11,9 @@ namespace CakeLauncher
     {
         public static void ExecuteCmd(string task, string workingDir)
         {
-            //    return `powershell -ExecutionPolicy ByPass -File build.ps1 -target \"${taskName}\"`;
             var process = new Process();
             process.StartInfo.FileName = "powershell";
-            process.StartInfo.Arguments = $"-ExecutionPolicy ByPass -File build.ps1 -target  \"{task}\"";
+            process.StartInfo.Arguments = $"-ExecutionPolicy ByPass -File \"{workingDir}\build.ps1\" -target  \"{task}\"";
             process.StartInfo.WorkingDirectory = workingDir;
             process.Start();
         }
