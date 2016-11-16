@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9640AE8E-8C41-4297-9296-A892272EFDD9}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{DA113182-66E4-490D-9226-A7E66560175E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CakeLauncher</RootNamespace>
-    <AssemblyName>CakeLauncher</AssemblyName>
+    <RootNamespace>CakeLauncher.Register</RootNamespace>
+    <AssemblyName>CakeLauncher.Register</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,10 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>CakeLauncher.snk</AssemblyOriginatorKeyFile>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SharpShell, Version=2.2.0.0, Culture=neutral, PublicKeyToken=f14dc899472fe6fb, processorArchitecture=MSIL">
@@ -53,18 +53,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CakeContextMenu.cs" />
-    <Compile Include="CakeExecutor.cs" />
-    <Compile Include="CakeParser.cs" />
-    <Compile Include="CakeTask.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CakeLauncher.snk" />
-    <None Include="LICENSE.rtf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CakeLauncher\CakeLauncher.csproj">
+      <Project>{9640ae8e-8c41-4297-9296-a892272efdd9}</Project>
+      <Name>CakeLauncher</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

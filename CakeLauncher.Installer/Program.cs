@@ -37,7 +37,7 @@ namespace CakeLauncher.Installer
         static string GetProjectDir()
         {
             var current = new System.IO.DirectoryInfo("..\\").FullName;
-            var projectDir = System.IO.Path.Combine(current, "CakeLauncher\\bin\\Release");
+            var projectDir = System.IO.Path.Combine(current, "CakeLauncher.Register\\bin\\Release");
             return projectDir;
         }
 
@@ -85,7 +85,7 @@ namespace CakeLauncher.Installer
             project.Version = new Version(version);
             project.MajorUpgrade = new MajorUpgrade { AllowSameVersionUpgrades = true, DowngradeErrorMessage = "Higher version already installed" };
 
-            project.Actions.Add(new InstalledFileAction("srm.exe", "CakeLauncher.dll -codebase", Return.check, When.After, Step.InstallFiles, Condition.NOT_Installed));
+            project.Actions.Add(new InstalledFileAction("CakeLauncher.Register.exe", "", Return.check, When.After, Step.InstallFiles, Condition.Always));
 
 
             Compiler.BuildMsi(project);

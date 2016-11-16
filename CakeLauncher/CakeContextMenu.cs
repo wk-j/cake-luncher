@@ -17,8 +17,6 @@ namespace CakeLauncher
     {
         protected override bool CanShowMenu()
         {
-            //var ok = SelectedItemPaths.Where(x => x.ToString().EndsWith(".cake")).Any();
-            //return ok;
             return true;
         }
 
@@ -39,7 +37,7 @@ namespace CakeLauncher
 
             var cake = new ToolStripMenuItem
             {
-                Text = "Cake"
+                Text = "Execute Cake Tasks"
             };
 
             menu.Items.Add(cake);
