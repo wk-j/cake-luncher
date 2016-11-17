@@ -85,7 +85,7 @@ namespace CakeLauncher.Installer
             project.Version = new Version(version);
             project.MajorUpgrade = new MajorUpgrade { AllowSameVersionUpgrades = true, DowngradeErrorMessage = "Higher version already installed" };
 
-            project.Actions.Add(new InstalledFileAction("CakeLauncher.Register.exe", "", Return.check, When.After, Step.InstallFiles, Condition.Always));
+            project.Actions.Add(new InstalledFileAction("srm.exe", "install CakeLauncher.dll -codebase", Return.check, When.After, Step.InstallFiles, Condition.Always));
 
 
             Compiler.BuildMsi(project);

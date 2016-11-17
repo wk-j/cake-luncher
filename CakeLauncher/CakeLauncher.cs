@@ -12,8 +12,9 @@ using System.Windows.Forms;
 namespace CakeLauncher
 {
     [ComVisible(true)]
+    [DisplayName("Cake Launcher")]
     [COMServerAssociation(AssociationType.ClassOfExtension, ".cake")]
-    public class CakeContextMenu : SharpContextMenu
+    public class CakeLauncher : SharpContextMenu
     {
         protected override bool CanShowMenu()
         {
