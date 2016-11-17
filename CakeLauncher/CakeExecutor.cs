@@ -17,5 +17,6 @@ namespace CakeLauncher
             process.StartInfo.WorkingDirectory = workingDir;
             process.Start();
         }
+
     }
 }

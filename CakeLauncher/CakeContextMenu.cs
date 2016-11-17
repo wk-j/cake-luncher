@@ -37,7 +37,7 @@ namespace CakeLauncher
 
             var cake = new ToolStripMenuItem
             {
-                Text = "Execute Cake Tasks"
+                Text = "Cake"
             };
 
             menu.Items.Add(cake);
