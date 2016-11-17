@@ -7,6 +7,8 @@ var pass = EnvironmentVariable("ghp");
 var version = ParseAssemblyInfo($"./{projectName}/Properties/AssemblyInfo.cs").AssemblyVersion;
 var solution = $"{projectName}.sln";
 
+var releasePath = $"./{projectName}/bin/Release";
+
 Action  clearZip = () => {
     DeleteFiles($"{projectName}.Installer/*.msi");
 };
@@ -14,6 +16,20 @@ Action  clearZip = () => {
 Func<string> getZip = () => {
     return new System.IO.DirectoryInfo($"{projectName}").GetFiles("*.msi").LastOrDefault().FullName;
 };
+
+Task("Install")
+    .IsDependentOn("Build-Release")
+    .Does(() => {
+        StartProcess($"{releasePath}/install.cmd", new ProcessSettings {
+            WorkingDirectory = $"{releasePath}"
+        });
+    });
+
+Task("Uninstall").Does(() => {
+    StartProcess($"./{releasePath}/uninstall.cmd", new ProcessSettings {
+        WorkingDirectory = $"{releasePath}"
+    });
+});
 
 Task("Build-Release")
     .Does(() => {
