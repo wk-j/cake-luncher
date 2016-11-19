@@ -55,7 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CakeLauncher.cs" />
+    <Compile Include="CakePowerLauncher.cs" />
     <Compile Include="CakeExecutor.cs" />
     <Compile Include="CakeParser.cs" />
     <Compile Include="CakeTask.cs" />

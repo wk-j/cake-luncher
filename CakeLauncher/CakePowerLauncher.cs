@@ -12,13 +12,13 @@ using System.Windows.Forms;
 namespace CakeLauncher
 {
     [ComVisible(true)]
-    [DisplayName("Cake Launcher")]
+    [DisplayName("Cake Power Launcher")]
     [COMServerAssociation(AssociationType.ClassOfExtension, ".cake")]
-    public class CakeLauncher : SharpContextMenu
+    public class CakePowerLauncher : SharpContextMenu
     {
         protected override bool CanShowMenu()
         {
-            return true;
+            return GetSelectedFile() != null;
         }
 
         private string GetSelectedFile()

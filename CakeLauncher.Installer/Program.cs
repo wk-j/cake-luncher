@@ -12,12 +12,14 @@ namespace CakeLauncher.Installer
             var config = filter.GetWixFiles("*.config");
             var dll = filter.GetWixFiles("*.dll");
             var exe = filter.GetWixFiles("*.exe");
+            var cmd = filter.GetWixFiles("*.cmd");
             config.ForEach(x => x.SetComponentPermanent(true));
 
             var files = new List<File>();
             files.AddRange(config);
             files.AddRange(dll);
             files.AddRange(exe);
+            files.AddRange(cmd);
 
             var dir = new Dir(".", files.ToArray());
             return dir;
@@ -80,13 +82,12 @@ namespace CakeLauncher.Installer
             project.UI = WUI.WixUI_InstallDir;
             project.LicenceFile = System.IO.Path.Combine(config.ProjectDir, "LICENSE.rtf");
 
+            //project.Actions.Add(new InstalledFileAction("srm.exe", "install CakeLauncher.dll -codebase", Return.check, When.After, Step.InstallFiles, Condition.Always));
+
             project.UpgradeCode = Guid.Parse("FCD4BCB7-3B5D-4A90-8483-6A152CFD8F0F");
             project.ProductId = Guid.NewGuid();
             project.Version = new Version(version);
             project.MajorUpgrade = new MajorUpgrade { AllowSameVersionUpgrades = true, DowngradeErrorMessage = "Higher version already installed" };
-
-            project.Actions.Add(new InstalledFileAction("srm.exe", "install CakeLauncher.dll -codebase", Return.check, When.After, Step.InstallFiles, Condition.Always));
-
 
             Compiler.BuildMsi(project);
         }

@@ -6,41 +6,53 @@
 </auto-generated>
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="886e612f-8157-4424-ac43-ec6a7dcd7014" Name="CakeLauncher.0.1.2.0" Language="1033" Codepage="Windows-1252" Version="0.1.2.0" UpgradeCode="fcd4bcb7-3b5d-4a90-8483-6a152cfd8f0f" Manufacturer="wk">
+  <Product Id="26b5b231-b4f6-4ab5-a252-9bc5df291048" Name="CakeLauncher.0.1.4.0" Language="1033" Codepage="Windows-1252" Version="0.1.4.0" UpgradeCode="fcd4bcb7-3b5d-4a90-8483-6a152cfd8f0f" Manufacturer="wk">
     <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" />
-    <Media Id="1" Cabinet="CakeLauncher.0.1.2.0_.cab" EmbedCab="yes" />
+    <Media Id="1" Cabinet="CakeLauncher.0.1.4.0_.cab" EmbedCab="yes" />
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder" Name="ProgramFilesFolder">
         <Directory Id="ProgramFilesFolder.CakeLauncher" Name="CakeLauncher">
           <Directory Id="INSTALLDIR" Name=".">
 
-            <Component Id="Component._...keLauncher.Register.exe.config" Guid="40633c8c-e3e7-4ff5-9627-4cddbfd04af9" Permanent="yes">
+            <Component Id="Component._...keLauncher.Register.exe.config" Guid="4410f771-cf07-4cfe-a30a-94bac24a581f" Permanent="yes">
               <File Id="_...keLauncher.Register.exe.config" Source="..\CakeLauncher.Register\bin\Release\CakeLauncher.Register.exe.config">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.CakeLauncher.dll" Guid="40633c8c-e3e7-4ff5-9627-4cdd051d7387">
+            <Component Id="Component.CakeLauncher.dll" Guid="4410f771-cf07-4cfe-a30a-94ba089781ad">
               <File Id="CakeLauncher.dll" Source="..\CakeLauncher.Register\bin\Release\CakeLauncher.dll">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.SharpShell.dll" Guid="40633c8c-e3e7-4ff5-9627-4cddd721b3ee">
+            <Component Id="Component.SharpShell.dll" Guid="4410f771-cf07-4cfe-a30a-94bada9bc114">
               <File Id="SharpShell.dll" Source="..\CakeLauncher.Register\bin\Release\SharpShell.dll">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.CakeLauncher.Register.exe" Guid="40633c8c-e3e7-4ff5-9627-4cddf46a7062">
+            <Component Id="Component.CakeLauncher.Register.exe" Guid="4410f771-cf07-4cfe-a30a-94baf7e47e88">
               <File Id="CakeLauncher.Register.exe" Source="..\CakeLauncher.Register\bin\Release\CakeLauncher.Register.exe">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.srm.exe" Guid="40633c8c-e3e7-4ff5-9627-4cdd8e602ef6">
+            <Component Id="Component.srm.exe" Guid="4410f771-cf07-4cfe-a30a-94ba91da3c1c">
               <File Id="srm.exe" Source="..\CakeLauncher.Register\bin\Release\srm.exe">
+                <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
+              </File>
+            </Component>
+
+            <Component Id="Component.install.cmd" Guid="4410f771-cf07-4cfe-a30a-94ba237eb2d4">
+              <File Id="install.cmd" Source="..\CakeLauncher.Register\bin\Release\install.cmd">
+                <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
+              </File>
+            </Component>
+
+            <Component Id="Component.uninstall.cmd" Guid="4410f771-cf07-4cfe-a30a-94ba8946c617">
+              <File Id="uninstall.cmd" Source="..\CakeLauncher.Register\bin\Release\uninstall.cmd">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
@@ -66,6 +78,8 @@
       <ComponentRef Id="Component.SharpShell.dll" />
       <ComponentRef Id="Component.CakeLauncher.Register.exe" />
       <ComponentRef Id="Component.srm.exe" />
+      <ComponentRef Id="Component.install.cmd" />
+      <ComponentRef Id="Component.uninstall.cmd" />
     </Feature>
 
     <InstallExecuteSequence>

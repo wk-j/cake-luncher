@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -15,7 +16,9 @@ namespace CakeLauncher.Register
     {
         public static void Main(string[] args)
         {
+            RegisterExtension();
             Register();
+
         }
 
         private static void _Register()
@@ -36,31 +39,23 @@ namespace CakeLauncher.Register
             }
         }
 
+        private static void RegisterExtension()
+        {
+            // substitute "HKEY_LOCAL_MACHINE" if needed...
+            Registry.SetValue("HKEY_LOCAL_MACHINE\\Software\\Classes\\.cake", "", "Cake Build", RegistryValueKind.String);
+        }
+
         private static void Register()
         {
             var path = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName;
 
             Process.Start(new ProcessStartInfo()
             {
-                FileName = RuntimeEnvironment.GetRuntimeDirectory() + "RegAsm.exe",
-                Verb = "runas",
-                Arguments = $"{path}\\CakeLauncher.dll"
-            });
-            Process.Start(new ProcessStartInfo()
-            {
                 FileName = "srm.exe",
                 Verb = "runas",
-                Arguments = $"install {path}\\CakeLauncher.dll -codebase"
+                WorkingDirectory = path,
+                Arguments = $"install CakeLauncher.dll -codebase"
             });
-            Process[] explorers = Process.GetProcessesByName("explorer");
-            foreach (Process explorer in explorers)
-            {
-                try
-                {
-                    explorer.Kill();
-                }
-                catch { }
-            }
         }
     }
 }
