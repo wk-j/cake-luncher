@@ -21,24 +21,6 @@ namespace CakeLauncher.Register
 
         }
 
-        private static void _Register()
-        {
-            try
-            {
-                var service = new RegistrationServices();
-                var path = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName;
-                var dll = Path.Combine(path, "CakeLauncher.dll");
-                var asm = Assembly.LoadFile(dll);
-                service.RegisterAssembly(asm, AssemblyRegistrationFlags.SetCodeBase);
-
-                MessageBox.Show("Register CakeLauncher success");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private static void RegisterExtension()
         {
             // substitute "HKEY_LOCAL_MACHINE" if needed...

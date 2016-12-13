@@ -82,12 +82,29 @@ namespace CakeLauncher.Installer
             project.UI = WUI.WixUI_InstallDir;
             project.LicenceFile = System.IO.Path.Combine(config.ProjectDir, "LICENSE.rtf");
 
-            //project.Actions.Add(new InstalledFileAction("srm.exe", "install CakeLauncher.dll -codebase", Return.check, When.After, Step.InstallFiles, Condition.Always));
-
             project.UpgradeCode = Guid.Parse("FCD4BCB7-3B5D-4A90-8483-6A152CFD8F0F");
             project.ProductId = Guid.NewGuid();
             project.Version = new Version(version);
             project.MajorUpgrade = new MajorUpgrade { AllowSameVersionUpgrades = true, DowngradeErrorMessage = "Higher version already installed" };
+
+
+            /*
+            project.Binaries = new[] {
+                new Binary(new Id("CakeLauncher.Register"), @"CakeLauncher.Register.exe")
+            };
+            */
+
+            project.Actions = new[]
+            {
+                  new InstalledFileAction("CakeLauncher.Register.exe", "", Return.check, When.After, Step.InstallFinalize, Condition.NOT_Installed), 
+              
+                /*
+                 new BinaryFileAction("CakeLauncher.Register", "Executing Binary file...", Return.check, When.After, Step.InstallFiles, Condition.NOT_Installed)
+                {
+                    Execute = Execute.deferred
+                }
+                */
+            };
 
             Compiler.BuildMsi(project);
         }
