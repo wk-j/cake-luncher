@@ -88,6 +88,7 @@ namespace CakeLauncher.Installer
             project.MajorUpgrade = new MajorUpgrade { AllowSameVersionUpgrades = true, DowngradeErrorMessage = "Higher version already installed" };
 
 
+
             /*
             project.Binaries = new[] {
                 new Binary(new Id("CakeLauncher.Register"), @"CakeLauncher.Register.exe")

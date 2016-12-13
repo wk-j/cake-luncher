@@ -7,15 +7,23 @@ var pass = EnvironmentVariable("ghp");
 var version = ParseAssemblyInfo($"./{projectName}/Properties/AssemblyInfo.cs").AssemblyVersion;
 var solution = $"{projectName}.sln";
 
-var releasePath = $"./{projectName}/bin/Release";
+var releasePath = $"./{projectName}.Register/bin/Release";
 
 Action  clearZip = () => {
-    DeleteFiles($"{projectName}.Installer/*.msi");
+    //DeleteFiles($"{projectName}.Installer/*.msi");
+    DeleteFiles("zip/*.zip");
 };
 
 Func<string> getZip = () => {
-    return new System.IO.DirectoryInfo($"{projectName}").GetFiles("*.msi").LastOrDefault().FullName;
+    return new System.IO.DirectoryInfo("zip").GetFiles("*.zip").LastOrDefault().FullName;
 };
+
+Task("Create-Zip")
+    .Does(() => {
+           clearZip();
+           var dest = $"zip/{projectName}-{version}.zip";
+           Zip(releasePath, dest);
+});
 
 Task("Install")
     .IsDependentOn("Build-Release")
@@ -43,6 +51,7 @@ Task("Build-Release")
 
 Task("Create-Github-Release")
     .IsDependentOn("Build-Release")
+    .IsDependentOn("Create-Zip")
     .Does(() => {
         var zip = getZip();
         var tag = $"v{version}";
