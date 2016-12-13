@@ -6,7 +6,7 @@
 </auto-generated>
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="54d573fc-16e8-4d1f-9181-e7bb56de5df8" Name="CakeLauncher.0.1.5.0" Language="1033" Codepage="Windows-1252" Version="0.1.5.0" UpgradeCode="fcd4bcb7-3b5d-4a90-8483-6a152cfd8f0f" Manufacturer="wk">
+  <Product Id="741224d5-f2ac-44e1-84a8-f75cda65b200" Name="CakeLauncher.0.1.5.0" Language="1033" Codepage="Windows-1252" Version="0.1.5.0" UpgradeCode="fcd4bcb7-3b5d-4a90-8483-6a152cfd8f0f" Manufacturer="wk">
     <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" />
     <Media Id="1" Cabinet="CakeLauncher.0.1.5.0_.cab" EmbedCab="yes" />
 
@@ -15,43 +15,43 @@
         <Directory Id="ProgramFilesFolder.CakeLauncher" Name="CakeLauncher">
           <Directory Id="INSTALLDIR" Name=".">
 
-            <Component Id="Component._...keLauncher.Register.exe.config" Guid="f2072dea-827b-489c-a206-ba0ef62aa403" Permanent="yes">
+            <Component Id="Component._...keLauncher.Register.exe.config" Guid="6f4e7caf-231e-4561-a09d-fde6d3d7aeae" Permanent="yes">
               <File Id="_...keLauncher.Register.exe.config" Source="..\CakeLauncher.Register\bin\Release\CakeLauncher.Register.exe.config">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.CakeLauncher.dll" Guid="f2072dea-827b-489c-a206-ba0e3c77cd91">
+            <Component Id="Component.CakeLauncher.dll" Guid="6f4e7caf-231e-4561-a09d-fde61924d73c">
               <File Id="CakeLauncher.dll" Source="..\CakeLauncher.Register\bin\Release\CakeLauncher.dll">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.SharpShell.dll" Guid="f2072dea-827b-489c-a206-ba0e0e7b0df8">
+            <Component Id="Component.SharpShell.dll" Guid="6f4e7caf-231e-4561-a09d-fde6eb2817a3">
               <File Id="SharpShell.dll" Source="..\CakeLauncher.Register\bin\Release\SharpShell.dll">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.CakeLauncher.Register.exe" Guid="f2072dea-827b-489c-a206-ba0e2bc4ca6c">
+            <Component Id="Component.CakeLauncher.Register.exe" Guid="6f4e7caf-231e-4561-a09d-fde60871d417">
               <File Id="CakeLauncher.Register.exe" Source="..\CakeLauncher.Register\bin\Release\CakeLauncher.Register.exe">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.srm.exe" Guid="f2072dea-827b-489c-a206-ba0ec5ba8800">
+            <Component Id="Component.srm.exe" Guid="6f4e7caf-231e-4561-a09d-fde6a26792ab">
               <File Id="srm.exe" Source="..\CakeLauncher.Register\bin\Release\srm.exe">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.install.cmd" Guid="f2072dea-827b-489c-a206-ba0e575efeb8">
+            <Component Id="Component.install.cmd" Guid="6f4e7caf-231e-4561-a09d-fde6340b0863">
               <File Id="install.cmd" Source="..\CakeLauncher.Register\bin\Release\install.cmd">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.uninstall.cmd" Guid="f2072dea-827b-489c-a206-ba0ebd2612fb">
+            <Component Id="Component.uninstall.cmd" Guid="6f4e7caf-231e-4561-a09d-fde69ad31ca6">
               <File Id="uninstall.cmd" Source="..\CakeLauncher.Register\bin\Release\uninstall.cmd">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
