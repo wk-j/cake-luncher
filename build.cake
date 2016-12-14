@@ -7,7 +7,7 @@ var pass = EnvironmentVariable("ghp");
 var version = ParseAssemblyInfo($"./{projectName}/Properties/AssemblyInfo.cs").AssemblyVersion;
 var solution = $"{projectName}.sln";
 
-var releasePath = $"./{projectName}.Register/bin/Release";
+var releasePath = $"./{projectName}/bin/Release";
 
 Action  clearZip = () => {
     //DeleteFiles($"{projectName}.Installer/*.msi");

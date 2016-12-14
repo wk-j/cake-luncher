@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>cake-launcher</id>
+    <title>Cake Launcher (Install)</title>
+    <version>0.1.5.0</version>
+    <authors>wk-j</authors>
+    <owners>wk-j</owners>
+    <summary>Execute Cake tasks from Explorer context menu</summary>
+    <description>Execute Cake tasks from Explorer context menu</description>
+    <projectUrl>https://github.com/wk-j/cake-launcher</projectUrl>
+    <packageSourceUrl>https://github.com/wk-j/cake-launcher</packageSourceUrl>
+    <!--<projectSourceUrl></projectSourceUrl>
+    <docsUrl></docsUrl>
+    <mailingListUrl></mailingListUrl>
+    <bugTrackerUrl></bugTrackerUrl>-->
+    <tags>cake launcher</tags>
+    <copyright>https://github.com/wk-j/cake-launcher</copyright>
+    <licenseUrl>https://github.com/wk-j/cake-launcher</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/cake-launcher.png</iconUrl>-->
+    <!--<dependencies>
+      <dependency id="" version="__VERSION__" />
+      <dependency id="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+    <!--<provides></provides>-->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="Z:\Source\github\CakeLauncher\CakeLauncher.Register\bin\Release\**" target="tools"/>
+  </files>
+</package>

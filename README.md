@@ -15,9 +15,9 @@ pause
 
 ## Installation
 
-1. Extract CakeLauncher-{version}.zip
+1. Extract CakeLauncher-XXX.zip
 2. Execute CakeLauncher.Register.exe
 
 ## Uninstall
 
-- Execute uninstall.cmd
+- Execute CakeLauncher.Deregister.exe

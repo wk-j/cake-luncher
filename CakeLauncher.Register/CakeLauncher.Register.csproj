@@ -71,12 +71,6 @@
     <None Include="CakeLauncher.Register.snk" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CakeLauncher\CakeLauncher.csproj">
-      <Project>{9640ae8e-8c41-4297-9296-a892272efdd9}</Project>
-      <Name>CakeLauncher</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

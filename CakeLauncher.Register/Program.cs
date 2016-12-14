@@ -1,14 +1,7 @@
 ﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CakeLauncher.Register
 {
@@ -16,15 +9,14 @@ namespace CakeLauncher.Register
     {
         public static void Main(string[] args)
         {
-            RegisterExtension();
+            UpdateRegistry();
             Register();
-
         }
 
-        private static void RegisterExtension()
+        private static void UpdateRegistry()
         {
-            // substitute "HKEY_LOCAL_MACHINE" if needed...
-            Registry.SetValue("HKEY_LOCAL_MACHINE\\Software\\Classes\\.cake", "", "Cake Build", RegistryValueKind.String);
+            var key = "HKEY_LOCAL_MACHINE\\Software\\Classes\\.cake";
+            Registry.SetValue(key, "", "Cake Build", RegistryValueKind.String);
         }
 
         private static void Register()
