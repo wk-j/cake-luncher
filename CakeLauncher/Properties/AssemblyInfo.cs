@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CakeLuncher")]
 [assembly: AssemblyDescription("Execute Cake tasks from Explorer context menu")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("WK")]
+[assembly: AssemblyCompany("wk")]
 [assembly: AssemblyProduct("CakeLuncher")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]

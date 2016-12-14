@@ -9,7 +9,7 @@ namespace CakeLauncher.Register
     {
         public static void Main(string[] args)
         {
-            UpdateRegister();
+            //UpdateRegister();
             Deregister();
 
         }

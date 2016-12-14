@@ -79,16 +79,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CakeLauncher.Deregister\CakeLauncher.Deregister.csproj">
-      <Project>{54811d7c-b3eb-44da-9ec3-58274a23fc48}</Project>
-      <Name>CakeLauncher.Deregister</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CakeLauncher.Register\CakeLauncher.Register.csproj">
-      <Project>{da113182-66e4-490d-9226-a7e66560175e}</Project>
-      <Name>CakeLauncher.Register</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
