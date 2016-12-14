@@ -6,7 +6,7 @@
 </auto-generated>
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="2013fda8-880e-4dca-92d2-7ca7cb50139b" Name="CakeLauncher.0.1.6.0" Language="1033" Codepage="Windows-1252" Version="0.1.6.0" UpgradeCode="fcd4bcb7-3b5d-4a90-8483-6a152cfd8f0f" Manufacturer="wk">
+  <Product Id="f7171b98-33b1-4556-9901-89e918965f03" Name="CakeLauncher.0.1.6.0" Language="1033" Codepage="Windows-1252" Version="0.1.6.0" UpgradeCode="fcd4bcb7-3b5d-4a90-8483-6a152cfd8f0f" Manufacturer="wk">
     <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" />
     <Media Id="1" Cabinet="CakeLauncher.0.1.6.0_.cab" EmbedCab="yes" />
 
@@ -15,43 +15,43 @@
         <Directory Id="ProgramFilesFolder.CakeLauncher" Name="CakeLauncher">
           <Directory Id="INSTALLDIR" Name=".">
 
-            <Component Id="Component.CakeLauncher.dll" Guid="30d4bd64-5d97-41e1-a063-a261007e6333">
+            <Component Id="Component.CakeLauncher.dll" Guid="f188cdcb-e9bd-4103-97cc-36385afa9131">
               <File Id="CakeLauncher.dll" Source="..\CakeLauncher\bin\Release\CakeLauncher.dll">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.SharpShell.dll" Guid="30d4bd64-5d97-41e1-a063-a261d282a39a">
+            <Component Id="Component.SharpShell.dll" Guid="f188cdcb-e9bd-4103-97cc-36382cfed198">
               <File Id="SharpShell.dll" Source="..\CakeLauncher\bin\Release\SharpShell.dll">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.CakeLauncher.Deregister.exe" Guid="30d4bd64-5d97-41e1-a063-a261d0341f67">
+            <Component Id="Component.CakeLauncher.Deregister.exe" Guid="f188cdcb-e9bd-4103-97cc-36382ab04d65">
               <File Id="CakeLauncher.Deregister.exe" Source="..\CakeLauncher\bin\Release\CakeLauncher.Deregister.exe">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.CakeLauncher.Register.exe" Guid="30d4bd64-5d97-41e1-a063-a261efcb600e">
+            <Component Id="Component.CakeLauncher.Register.exe" Guid="f188cdcb-e9bd-4103-97cc-363849478e0c">
               <File Id="CakeLauncher.Register.exe" Source="..\CakeLauncher\bin\Release\CakeLauncher.Register.exe">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.srm.exe" Guid="30d4bd64-5d97-41e1-a063-a26189c11ea2">
+            <Component Id="Component.srm.exe" Guid="f188cdcb-e9bd-4103-97cc-3638e33d4ca0">
               <File Id="srm.exe" Source="..\CakeLauncher\bin\Release\srm.exe">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.install.cmd" Guid="30d4bd64-5d97-41e1-a063-a2611b65945a">
+            <Component Id="Component.install.cmd" Guid="f188cdcb-e9bd-4103-97cc-363875e1c258">
               <File Id="install.cmd" Source="..\CakeLauncher\bin\Release\install.cmd">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>
             </Component>
 
-            <Component Id="Component.uninstall.cmd" Guid="30d4bd64-5d97-41e1-a063-a261812da89d">
+            <Component Id="Component.uninstall.cmd" Guid="f188cdcb-e9bd-4103-97cc-3638dba9d69b">
               <File Id="uninstall.cmd" Source="..\CakeLauncher\bin\Release\uninstall.cmd">
                 <PermissionEx User="Everyone" GenericAll="yes" xmlns="http://schemas.microsoft.com/wix/UtilExtension" />
               </File>

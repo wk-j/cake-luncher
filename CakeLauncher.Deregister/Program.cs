@@ -16,18 +16,19 @@ namespace CakeLauncher.Register
 
         private static void UpdateRegister()
         {
-            var root = "HKEY_LOCAL_MACHINE\\Software\\Classes";
             var keyName = ".cake";
-            Registry.SetValue("", "", "Cake Build", RegistryValueKind.String);
 
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(root, true))
+            using (RegistryKey key = Registry.LocalMachine.OpenSubKey("Software\\Classes", true))
             {
                 if (key == null)
                 {
                 }
                 else
                 {
-                    key.DeleteValue(keyName);
+                    try
+                    {
+                        key.DeleteValue(keyName);
+                    } catch { }
                 }
             }
         }
