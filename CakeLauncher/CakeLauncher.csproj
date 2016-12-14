@@ -84,9 +84,9 @@
       <Project>{54811d7c-b3eb-44da-9ec3-58274a23fc48}</Project>
       <Name>CakeLauncher.Deregister</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CakeLauncher.Installer\CakeLauncher.Installer.csproj">
-      <Project>{9e1fe357-d99e-46cf-a088-1264b1397599}</Project>
-      <Name>CakeLauncher.Installer</Name>
+    <ProjectReference Include="..\CakeLauncher.Register\CakeLauncher.Register.csproj">
+      <Project>{da113182-66e4-490d-9226-a7e66560175e}</Project>
+      <Name>CakeLauncher.Register</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
