@@ -4,6 +4,7 @@
 var projectName = "CakeLauncher";
 var user = EnvironmentVariable("ghu");
 var pass = EnvironmentVariable("ghp");
+var apiKey = EnvironmentVariable("chp");
 var version = ParseAssemblyInfo($"./{projectName}/Properties/AssemblyInfo.cs").AssemblyVersion;
 var solution = $"{projectName}.sln";
 
@@ -24,6 +25,35 @@ Task("Create-Zip")
            var dest = $"zip/{projectName}-{version}.zip";
            Zip(releasePath, dest);
 });
+
+Task("Create-Choco-Package")
+    .IsDependentOn("Build-Release")
+    .Does(() => {
+        var spec = $"CakeLauncher.Chocoletey\\cake-launcher\\cake-launcher.nuspec";
+        var text = System.IO.File.ReadAllText(spec)
+            .Replace("$version", version);
+        System.IO.File.WriteAllText(spec, text);
+
+        StartProcess("choco", new ProcessSettings {
+            Arguments = $"pack {spec}"
+        });
+
+        var package = new System.IO.DirectoryInfo("./").GetFiles("*.nupkg").FirstOrDefault().FullName;
+
+        ChocolateyPush(package, new ChocolateyPushSettings {
+            Source                = "https://chocolatey.org",
+            ApiKey                = apiKey,
+            //Timeout               = 300,
+            Debug                 = false,
+            Verbose               = false,
+            Force                 = false,
+            Noop                  = false,
+            LimitOutput           = false,
+            ExecutionTimeout      = 13,
+            CacheLocation         = @"C:\temp",
+            AllowUnofficial        = false
+        });
+    });
 
 Task("Install")
     .IsDependentOn("Build-Release")

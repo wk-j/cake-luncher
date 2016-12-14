@@ -13,7 +13,7 @@ powershell -File build.ps1 %*
 pause
 ```
 
-## Installation
+## Install
 
 1. Extract CakeLauncher-XXX.zip
 2. Execute CakeLauncher.Register.exe
@@ -21,3 +21,8 @@ pause
 ## Uninstall
 
 - Execute CakeLauncher.Deregister.exe
+
+## Chocolatey
+
+- Install: `choco install cake-launcher`
+- Uninstall: `choco uninstall cake-launcher`

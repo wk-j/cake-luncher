@@ -1,1 +1,0 @@
-choco install package-name -source 'c:\path\to\Package\' -f

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -23,11 +24,17 @@ namespace CakeLauncher.Register
         {
             var path = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName;
 
+            Console.WriteLine("working dir | {0}", path);
+
+            var dllPath = Path.Combine(path, "CakeLauncher.dll");
+            var srm = Path.Combine(path, "srm.exe");
+
             Process.Start(new ProcessStartInfo()
             {
-                FileName = "srm.exe",
+                FileName = "srm.exe", 
                 Verb = "runas",
                 WorkingDirectory = path,
+                UseShellExecute = true,
                 Arguments = $"install CakeLauncher.dll -codebase"
             });
         }
